@@ -1,0 +1,38 @@
+{
+    "name": "sunaoka/laravel-aws-session-token",
+    "description": "Add AWS_SESSION_TOKEN to Laravel's AWS configuration.",
+    "keywords": ["laravel", "lambda", "credentials"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sunaoka",
+            "email": "sunaoka@pocari.org"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "illuminate/support": "^6.0 || ^7.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Sunaoka\\LaravelAwsSessionToken\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sunaoka\\LaravelAwsSessionToken\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sunaoka\\LaravelAwsSessionToken\\AwsSessionTokenServiceProvider"
+            ],
+            "aliases": {
+            }
+        }
+    }
+}
