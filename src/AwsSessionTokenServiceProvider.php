@@ -14,7 +14,7 @@ class AwsSessionTokenServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (!isset($_SERVER['LAMBDA_TASK_ROOT'])) {
+        if (env('LAMBDA_TASK_ROOT') === null) {
             return;
         }
 

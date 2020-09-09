@@ -1,4 +1,4 @@
-# Add AWS_SESSION_TOKEN for Laravel 6 and 7
+# Add AWS_SESSION_TOKEN for Laravel 6, 7 and 8
 
 ## Installation
 
