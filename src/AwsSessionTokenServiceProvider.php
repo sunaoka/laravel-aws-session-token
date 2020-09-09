@@ -14,14 +14,14 @@ class AwsSessionTokenServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (env('LAMBDA_TASK_ROOT') === null) {
-            return;
+        if (!Config::get('aws-session-token.enable', true)) {
+            return; // @codeCoverageIgnore
         }
 
         $keys = Config::get('aws-session-token.keys', []);
         foreach ($keys as $key) {
             if (Config::has($key)) {
-                Config::set("{$key}.token", env('AWS_SESSION_TOKEN'));
+                Config::set("{$key}.token", request()->server('AWS_SESSION_TOKEN'));
             }
         }
     }
