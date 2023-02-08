@@ -62,10 +62,10 @@ jobs:
           composer update --prefer-dist --no-interaction --no-progress
 
       - name: Migrate phpunit XML configuration
+        continue-on-error: true
         run: vendor/bin/phpunit --migrate-configuration
 
       - name: Run test suite
-        continue-on-error: true
         run: vendor/bin/phpunit --coverage-clover=coverage.xml
 
       - name: Upload coverage to Codecov
