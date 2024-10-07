@@ -9,9 +9,7 @@ use Sunaoka\LaravelAwsSessionToken\AwsSessionTokenServiceProvider;
 class AwsSessionTokenServiceProviderTest extends TestCase
 {
     /**
-     * @param Application $app
-     *
-     * @return array
+     * @param  Application  $app
      */
     protected function getPackageProviders($app): array
     {
@@ -21,21 +19,21 @@ class AwsSessionTokenServiceProviderTest extends TestCase
     }
 
     /**
-     * @param Application $app
+     * @param  Application  $app
      */
     protected function resolveApplicationConfiguration($app): void
     {
         parent::resolveApplicationConfiguration($app);
 
         $app['config']->set('services.ses', [
-            'key'    => 'key',
+            'key' => 'key',
             'secret' => 'secret',
             'region' => 'us-east-1',
         ]);
 
         $app['config']->set('aws-session-token', [
             'enable' => true,
-            'keys'   => ['services.ses'],
+            'keys' => ['services.ses'],
         ]);
 
         $_SERVER['AWS_SESSION_TOKEN'] = 'dummy-session-token';

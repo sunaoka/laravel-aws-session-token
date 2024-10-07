@@ -14,7 +14,7 @@ class AwsSessionTokenServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (!Config::get('aws-session-token.enable', true)) {
+        if (! Config::get('aws-session-token.enable', true)) {
             return; // @codeCoverageIgnore
         }
 
@@ -34,7 +34,7 @@ class AwsSessionTokenServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes(
-            [__DIR__ . '/../config/aws-session-token.php' => config_path('aws-session-token.php')],
+            [__DIR__.'/../config/aws-session-token.php' => config_path('aws-session-token.php')],
             'aws-session-token-config'
         );
     }
