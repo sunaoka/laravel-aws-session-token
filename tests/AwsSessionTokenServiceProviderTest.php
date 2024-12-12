@@ -39,7 +39,7 @@ class AwsSessionTokenServiceProviderTest extends TestCase
         $_SERVER['AWS_SESSION_TOKEN'] = 'dummy-session-token';
     }
 
-    public function testRegister(): void
+    public function test_register(): void
     {
         self::assertSame('dummy-session-token', config('services.ses.token'));
     }
