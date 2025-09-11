@@ -14,6 +14,11 @@ class AwsSessionTokenServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(
+            dirname(__DIR__).'/config/aws-session-token.php',
+            'aws-session-token'
+        );
+
         if (! Config::get('aws-session-token.enable', true)) {
             return; // @codeCoverageIgnore
         }
