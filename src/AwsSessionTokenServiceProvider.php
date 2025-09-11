@@ -26,7 +26,7 @@ class AwsSessionTokenServiceProvider extends ServiceProvider
         $keys = Config::get('aws-session-token.keys', []);
         foreach ($keys as $key) {
             if (Config::has($key)) {
-                Config::set("{$key}.token", request()->server('AWS_SESSION_TOKEN'));
+                Config::set("{$key}.token", $_SERVER['AWS_SESSION_TOKEN'] ?? null);
             }
         }
     }
