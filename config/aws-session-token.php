@@ -7,7 +7,7 @@ return [
     | Enable or not
     |--------------------------------------------------------------------------
     */
-    'enable' => env('ENABLE_AWS_SESSION_TOKEN', true),
+    'enable' => (bool) env('ENABLE_AWS_SESSION_TOKEN', true),
 
     /*
     |--------------------------------------------------------------------------
