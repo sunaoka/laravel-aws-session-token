@@ -1,4 +1,4 @@
-# Add AWS_SESSION_TOKEN for Laravel 6.x to 11.x
+# Add AWS_SESSION_TOKEN for Laravel
 
 [![Latest](https://poser.pugx.org/sunaoka/laravel-aws-session-token/v)](https://packagist.org/packages/sunaoka/laravel-aws-session-token)
 [![License](https://poser.pugx.org/sunaoka/laravel-aws-session-token/license)](https://packagist.org/packages/sunaoka/laravel-aws-session-token)

@@ -14,6 +14,11 @@ class AwsSessionTokenServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(
+            dirname(__DIR__).'/config/aws-session-token.php',
+            'aws-session-token'
+        );
+
         if (! Config::get('aws-session-token.enable', true)) {
             return; // @codeCoverageIgnore
         }
@@ -21,7 +26,7 @@ class AwsSessionTokenServiceProvider extends ServiceProvider
         $keys = Config::get('aws-session-token.keys', []);
         foreach ($keys as $key) {
             if (Config::has($key)) {
-                Config::set("{$key}.token", request()->server('AWS_SESSION_TOKEN'));
+                Config::set("{$key}.token", $_SERVER['AWS_SESSION_TOKEN'] ?? null);
             }
         }
     }
