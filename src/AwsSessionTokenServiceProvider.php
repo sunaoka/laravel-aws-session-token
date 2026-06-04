@@ -23,6 +23,7 @@ class AwsSessionTokenServiceProvider extends ServiceProvider
             return; // @codeCoverageIgnore
         }
 
+        /** @var string[] $keys */
         $keys = Config::get('aws-session-token.keys', []);
         foreach ($keys as $key) {
             if (Config::has($key)) {
