@@ -22,16 +22,6 @@ class AwsSessionTokenServiceProviderTest extends TestCase
     /**
      * @param  Application  $app
      */
-    protected function resolveApplicationConfiguration($app): void
-    {
-        parent::resolveApplicationConfiguration($app);
-
-        $_SERVER['AWS_SESSION_TOKEN'] = 'dummy-session-token';
-    }
-
-    /**
-     * @param  Application  $app
-     */
     protected function defineEnvironment($app): void
     {
         tap($app['config'], static function (Repository $config) {

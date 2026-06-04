@@ -24,4 +24,7 @@
             <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
+    <php>
+        <server name="AWS_SESSION_TOKEN" value="dummy-session-token"/>
+    </php>
 </phpunit>
